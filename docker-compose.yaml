@@ -15,7 +15,7 @@ services:
     image: viktorstrate/photoview:latest
     restart: unless-stopped
     ports:
-      "8200:80"
+      - "8200:80"
     depends_on:
       - db
     environment:
