@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
 
   photoview:
-    image: viktorstrate/photoview:2.4.0
+    image: photoview/photoview:latest
     container_name: Photoview
     hostname: photoview
     security_opt:
