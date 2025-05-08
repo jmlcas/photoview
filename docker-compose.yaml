@@ -25,7 +25,7 @@ services:
       - PHOTOVIEW_LISTEN_PORT=80
       - PHOTOVIEW_MEDIA_CACHE=/app/cache
     volumes:
-       - api_cache:/app/cache
-       - ./photos:/photos:ro
+      - api_cache:/app/cache
+      - ./photos:/photos:ro
 volumes:
   api_cache:
