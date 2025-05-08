@@ -12,7 +12,7 @@ services:
       interval: 10s
       retries: 10
     volumes:
-      - /volume1/docker/photoview/db:/var/lib/postgresql/data:rw
+      - ./photoview/db:/var/lib/postgresql/data:rw
     environment:
       POSTGRES_DB: photoview
       POSTGRES_USER: photoviewuser
@@ -30,10 +30,10 @@ services:
     healthcheck:
       test: curl -f http://localhost:4000/ || exit 1
     ports:
-      - 7354:4000
+      - "8200:4000"
     volumes:
-      - /volume1/docker/photoview/cache:/app/cache:rw
-      - /volume1/docker/photoview/photos:/photos:ro
+      - ./photoview/cache:/app/cache:rw
+      - ./photoview/photos:/photos:ro
     environment:
       PHOTOVIEW_DATABASE_DRIVER: postgres
       PHOTOVIEW_POSTGRES_URL: postgresql://photoviewuser:photoviewpass@photoview-db:5432/photoview
